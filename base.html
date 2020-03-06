@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection.toLowerCase() == "rock"){
+          switch(computerSelection){
+            case "Rock":
+              return "This round is a draw! You both selected Rock!";
+              break;
+
+            case "Paper":
+              return "You lose this round! Paper beats Rock!";
+              break;
+
+            case "Scissors":
+              return "You win this round! Rock beats Scissors!";
+              break;
+          }
+        } else if (playerSelection.toLowerCase() == "paper"){
+            switch(computerSelection){
+              case "Rock":
+                return "You win this round! Paper beats Rock!";
+                break;
+
+              case "Paper":
+                return "This round is a draw! You both selected Paper!";
+                break;
+
+              case "Scissors":
+                return "You lose this round! Scissors beat Paper!";
+                break;
+            }
+        } else if (playerSelection.toLowerCase() == "scissors"){
+          switch(computerSelection){
+            case "Rock":
+              return "You lose this round! Rock beats Scissors!";
+              break;
+
+            case "Paper":
+              return "You win this round! Scissors beat Paper!";
+              break;
+
+            case "Scissors":
+              return "This round is a draw! You both selected Scissors!";
+              break;
+          }
+        } else { return "Incorrect Input, try again!";}
+      }
+
+      function playGame(){
+        let i = 0;
+        while (i < 5){
+          let playerSelection = prompt("Welcome to a game of Rock, Paper, Scissors! Which do you pick?");
+          computerSelection = computerPlay(arry);
+          console.log(playRound(playerSelection, computerSelection));
+          ++i;
+        }
+      }
+
+      let arry = ["Rock", "Paper", "Scissors"];
+      let computerPlay = array => {
+        let result = array[Math.floor(Math.random() * array.length)];
+        return result;
+      };
+      playGame();
+
+    </script>
+  </body>
+</html>
